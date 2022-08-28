@@ -1,0 +1,165 @@
+@font-face {
+    font-family: Cooper;
+    src: url(fonts\cooper_medium_bt.ttf);
+  }
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  html {
+    /* make sure we use up the whole viewport */
+    width: 100%;
+    min-height: 100vh;
+    /* for debugging, a red background lets us see any seams */
+}
+body {
+    width: 100%;
+    min-height: 100%; /* this helps with the sticky footer */
+    margin: 0 auto;
+    background: radial-gradient(circle, rgba(31,96,50,1) 0%, rgba(0,0,0,1) 80%);
+    background-size: cover;
+    
+}
+
+.container {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  max-width: 1200px;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    box-shadow: 0px 0px 26px -3px rgba(0,0,0,0.51);
+-webkit-box-shadow: 0px 0px 26px -3px rgba(0,0,0,0.51);
+-moz-box-shadow: 0px 0px 26px -3px rgba(0,0,0,0.51);
+}
+.container-img {
+    border-radius: 25px 0px 0px 25px;
+    flex-grow: 1;
+    flex-shrik:0;
+    min-width: 50%;
+    height: 80vh;
+    max-height: 1000px;
+    background-size: cover !important;
+    background-position: center 10% !important;
+
+
+}
+.desc {
+    font-family: Helvetica, Arial, sans-serif;
+    flex-grow: 0;
+    flex-shrink: 1;
+    display: flex;
+    min-width: 30%;
+    max-width: 500px;
+    flex-direction: column;
+    padding: 2em;
+    color: #000;
+}
+h1 {
+    font-family: Cooper, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 0px;
+    color:#fff;
+    text-align: center;
+    margin-top: 10%;
+
+}
+h2 {
+    font-family: Cooper, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 42px;
+    margin-bottom: 0px;
+    color:#29773E;
+}
+h3 {
+    font-family: Cooper, Helvetica, Arial, sans-serif;
+    color:#29773E;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+button {
+    margin-top: 25px;
+}
+#header {
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+#charName {
+    margin-bottom: 25px;
+}
+
+
+#charSeason::before {
+    content:"Season "
+}
+#charEpisode::before {
+    content:"Episode "
+}
+#charSeason::after {
+    content:", "
+}
+
+
+.button {
+    max-width: 300px;
+    --color: #00A97F;
+    padding: 0.8em 1.7em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+   }
+   
+   .button::before, .button::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+   }
+   
+   .button::before {
+    top: -1em;
+    left: -1em;
+   }
+   
+   .button::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+   }
+   
+   .button:hover::before, .button:hover::after {
+    height: 410px;
+    width: 410px;
+   }
+   
+   .button:hover {
+    color: rgb(10, 25, 30);
+   }
+   
+   .button:active {
+    filter: brightness(.8);
+   }
